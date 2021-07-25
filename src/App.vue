@@ -7,11 +7,16 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Hello from './amdmodules/hello/hello'
 
 export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  mounted() {
+    const hel = new Hello()
+    console.log(hel)
   }
 }
 </script>
