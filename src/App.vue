@@ -7,7 +7,6 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import Hello from './amdmodules/hello/hello'
 
 export default {
   name: 'App',
@@ -15,9 +14,22 @@ export default {
     HelloWorld
   },
   async mounted() {
-    const hel = await Hello()
-    hel.init()
-    console.log(hel)
+    window.dojoConfig = {
+      async: true,
+      packages: [
+        {
+          location: './amdmodules',
+          name: 'amdm'
+        }
+      ]
+    }
+    window['require'](['amd/hello/hello'],(Hello) => {
+      console.log(Hello)
+    })
+
+    // const hel = await Hello()
+    // hel.init()
+    // console.log(hel)
   }
 }
 </script>
