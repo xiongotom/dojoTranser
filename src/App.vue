@@ -14,8 +14,9 @@ export default {
   components: {
     HelloWorld
   },
-  mounted() {
-    const hel = new Hello()
+  async mounted() {
+    const hel = await Hello()
+    hel.init()
     console.log(hel)
   }
 }
