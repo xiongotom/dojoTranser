@@ -3,6 +3,8 @@ node_modules
 /dist
 /release
 /out
+/public/dojo
+/public/amd
 
 
 # local env files
