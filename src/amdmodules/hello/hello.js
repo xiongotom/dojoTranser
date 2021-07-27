@@ -8,15 +8,23 @@
 // });
 import {loadModules} from 'esri-loader'
 
-const load = async function() {
-  const [declare, domConstruct] = await loadModules(['dojo/_base/declare','dojo/dom-construct'])
-  const mo = declare([], {
-    init() {
-      const el = document.querySelector('#dojoDiv')
-      domConstruct.place('<span>Hello DOJO AAA</span>', el) 
+class Hello {
+  static async getClass() {
+    const [declare, domConstruct] = await loadModules(['dojo/_base/declare','dojo/dom-construct'])
+    const mo = () => {
+      return declare([], {
+        init() {
+          const el = document.querySelector('#dojoDiv')
+          domConstruct.place('<span>Hello DOJO AAB</span>', el) 
+        }
+      })
     }
-  })
-  return new mo()
+    return mo()
+  }
+  static async create() {
+    const clz = await this.getClass()
+    return new clz()
+  }
 }
 
-export default load
+export default Hello

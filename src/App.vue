@@ -7,6 +7,7 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Hello from './amdmodules/hello/hello'
 
 export default {
   name: 'App',
@@ -23,13 +24,13 @@ export default {
         }
       ]
     }
-    window['require'](['amd/hello/hello'],(Hello) => {
-      console.log(Hello)
-    })
+    // window['require'](['amd/hello/hello'],(Hello) => {
+    //   console.log(Hello)
+    // })
 
-    // const hel = await Hello()
-    // hel.init()
-    // console.log(hel)
+    const hel = await Hello.create()
+    hel.init()
+    console.log(hel)
   }
 }
 </script>
