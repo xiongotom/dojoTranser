@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "dijit": "^1.16.4",
     "dojo": "^1.16.4",
     "esri-loader": "^3.2.0",
     "vue": "^2.6.11"
@@ -23,6 +24,7 @@
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "cheerio": "^1.0.0-rc.10",
     "dojo-util": "^1.16.4",
     "dojo-webpack-plugin": "^3.0.1",
     "eslint": "^6.7.2",

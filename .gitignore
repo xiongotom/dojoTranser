@@ -4,6 +4,7 @@ node_modules
 /release
 /out
 /public/dojo
+/public/dijit
 /public/amd
 
 
