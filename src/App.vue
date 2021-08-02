@@ -2,17 +2,20 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <hello-widget></hello-widget>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Hello from './amdmodules/hello/hello'
+import HelloWidget from './amdmodules/hello/HelloWidget.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    HelloWidget
   },
   async mounted() {
     window.dojoConfig = {
